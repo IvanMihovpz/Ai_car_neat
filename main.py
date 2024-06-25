@@ -128,7 +128,7 @@ def eval_genomes(genomes, config):
 
         for i, car in enumerate(cars):
             if car.sprite.alive:
-                ge[i].fitness += 0.2
+                ge[i].fitness += 0.05
             else:
                 if ge[i].fitness > 0:
                     print(f"Car {i} died with fitness {ge[i].fitness}")
@@ -200,7 +200,7 @@ def run(config_path):
     stats = neat.StatisticsReporter()
     pop.add_reporter(stats)
 
-    pop.run(eval_genomes, 5)
+    pop.run(eval_genomes, 25)
 
     sys.stdout = sys.__stdout__
 
